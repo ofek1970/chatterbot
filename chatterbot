@@ -1,0 +1,23 @@
+from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
+
+# Create a new chatbot
+chatbot = ChatBot("My Bot")
+
+# Create a new trainer for the chatbot
+trainer = ListTrainer(chatbot)
+
+# Train the chatbot on a few responses
+trainer.train([
+    "Hi",
+    "Hello",
+    "How are you?",
+    "I'm good, thank you.",
+    "What's your name?",
+    "My name is My Bot."
+])
+
+# Get a response to a user's input
+response = chatbot.get_response("What's your name?")
+print(response)
+# Output: My name is My Bot.
